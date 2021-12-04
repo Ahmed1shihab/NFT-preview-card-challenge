@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --darkb-mainbg: hsl(217, 54%, 11%);
+    --darkb-cardbg: hsl(216, 50%, 16%);
+    --darkb-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+::selection {
+    background-color: var(--darkb-mainbg);
+    color: white;
+}
+html {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: var(--darkb-mainbg);
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+main {
+    display: grid;
+    place-items: center;
+    padding: 15px;
+}
+main .card {
+    max-width: 350px;
+    max-height: 550px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--darkb-cardbg);
+    box-shadow: 5px -2px 13px 6px hsl(215.6, 69.2%, 7.6%),
+        0px 8px 13px 6px hsl(215.6, 69.2%, 7.6%);
+    overflow: hidden;
+    border-radius: 15px;
+    padding: 15px;
+}
+.card .nft-img {
+    display: grid;
+    place-items: center;
+    position: relative;
+    margin-bottom: 17px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card .nft-img img {
+    max-width: 100%;
+}
+.card .nft-img .hover-overlay {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background-color: hsla(178, 100%, 50%, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+.card .nft-img:hover .hover-overlay {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
+.card .info h3 {
+    color: var(--white);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.card .info h3:hover {
+    color: var(--cyan);
+}
+.card .info p {
+    color: #536a89;
+    margin: 15px 0;
+}
+.card .info div.sale-info {
+    display: flex;
+    justify-content: space-between;
+}
+.card .info div.sale-info div.price {
+    color: var(--cyan);
+}
+.card .info div.sale-info div.price,
+.card .info div.sale-info .time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+}
+.card .info div.sale-info .time {
+    color: #536a89;
+}
+.card .owner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid var(--darkb-line);
+    font-size: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+}
+.card .owner img {
+    width: 40px;
+    border-radius: 50%;
+    border: 0.5px solid var(--white);
+}
+.card .owner p {
+    color: var(--soft-blue);
+}
+.card .owner p span {
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.card .owner p span:hover {
+    color: var(--cyan);
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: white;
+}
+.attribution a {
+    color: hsl(228, 42%, 57%);
+}
